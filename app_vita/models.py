@@ -43,7 +43,14 @@ class Property(models.Model):
         max_length=12,
         default='Si'
     )
+    number= models.IntegerField(
+        verbose_name='Número',
+        default=1
+    )
     floor = models.IntegerField(
         verbose_name='Piso',
         default=1
     )
+    
+    def __str__(self):
+        return self.type+" N° "+str(self.number)
